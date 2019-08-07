@@ -10,7 +10,7 @@ galaxy_info:
   platforms:
     - name: Archlinux
       versions:
-        - All
+        - all
   galaxy_tags:
     - system
     - tools
