@@ -1,11 +1,11 @@
-# ansible-role-yay
+# Yay
 Simple Yay installation on ArchLinux
 
 ## Requirements
 None.
 
 ## Role Variables
-`colored_output:` Whether the pacman config should display colored output. Can be =true= or =false=.
+`colored_output:` Whether the pacman config should display colored output. Can be `true` or `false`.
 
 ## Dependencies:
 None.
