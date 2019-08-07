@@ -10,6 +10,7 @@
   pacman:
     name: git
     state: present
+    version: "master"
 
 - name: Clone Yay repository
   git:
