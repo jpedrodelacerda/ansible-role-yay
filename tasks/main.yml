@@ -1,0 +1,41 @@
+---
+- name: Check for base-devel packages
+  become: yes
+  pacman:
+    name: base-devel
+    state: present
+
+- name: Check for git package
+  become: yes
+  pacman:
+    name: git
+    state: present
+
+- name: Clone Yay repository
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: "{{ ansible_env.HOME }}/yay"
+
+- name: Install Yay
+  shell: >-
+    echo "y" | makepkg -si
+  args:
+    chdir: "{{ ansible_env.HOME }}/yay"
+
+- name: Colored output
+  when: colored_output
+  become: yes
+  lineinfile:
+    dest: /etc/pacman.conf
+    state: present
+    regexp: "^(.*)Color"
+    line: "Color"
+
+- name: Neutral color output
+  when: not colored_output
+  become: yes
+  lineinfile:
+    dest: /etc/pacman.conf
+    state: present
+    regexp: "^(.*)Color"
+    line: "#Color"
