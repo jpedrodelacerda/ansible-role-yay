@@ -10,12 +10,12 @@
   pacman:
     name: git
     state: present
-    version: "master"
 
 - name: Clone Yay repository
   git:
     repo: https://aur.archlinux.org/yay.git
     dest: "{{ ansible_env.HOME }}/yay"
+    version: "master"
 
 - name: Install Yay
   shell: >-
