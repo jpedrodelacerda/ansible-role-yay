@@ -1,5 +1,5 @@
 # Yay
-Simple Yay installation on ArchLinux
+Simple installation of [`yay`](https://github.com/Jguer/yay) on Arch Linux using Ansible.
 
 ## Requirements
 None.
